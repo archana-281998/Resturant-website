@@ -1,0 +1,45 @@
+﻿@model Application7.Web.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    body{
+
+        
+        background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiIJ4A7_UPGFqcW5d10vQ9Zjkd4KHaTTsMVQ&usqp=CAU');
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100%100%;
+          }
+</style>
+<h1>Details</h1>
+
+<div>
+    <h4>MenuItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MenuItemName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MenuItemName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberOfPlates)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfPlates)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MenuItemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

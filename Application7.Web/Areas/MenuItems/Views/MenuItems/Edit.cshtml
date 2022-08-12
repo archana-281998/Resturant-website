@@ -1,0 +1,53 @@
+﻿@model Application7.Web.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<style>
+    body{
+
+        
+        background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiIJ4A7_UPGFqcW5d10vQ9Zjkd4KHaTTsMVQ&usqp=CAU');
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100%100%;
+          }
+</style>
+<h1>Edit</h1>
+
+<h4>MenuItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MenuItemId" />
+            <div class="form-group">
+                <label asp-for="MenuItemName" class="control-label"></label>
+                <input asp-for="MenuItemName" class="form-control" />
+                <span asp-validation-for="MenuItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfPlates" class="control-label"></label>
+                <input asp-for="NumberOfPlates" class="form-control" />
+                <span asp-validation-for="NumberOfPlates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
